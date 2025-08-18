@@ -78,7 +78,7 @@ const Portfolio: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="text-2xl font-bold bg-gradient-to-r text-white bg-clip-text">
-              DevWerik
+              Dev.Werik
             </div>
 
             <div className="hidden md:flex space-x-8">
@@ -246,10 +246,68 @@ const Portfolio: React.FC = () => {
                     className="min-w-10 max-w-10 object-contain hover:scale-110 transition-transform duration-300"
                   />
                 ))}
+                {[...skillsIcons, ...skillsIcons].map((icon, index) => (
+                  <img
+                    key={index}
+                    src={icon}
+                    alt="tech logo"
+                    className="min-w-10 max-w-10 object-contain hover:scale-110 transition-transform duration-300"
+                  />
+                ))}
               </div>
             </div>
           </div>
         </div>
+
+        {/* SERVICES */}
+        <section id="services" className="py-20 px-4 bg-slate-900">
+          <div className="max-w-6xl mx-auto text-center">
+            <p className="text-blue-300 uppercase tracking-wider text-sm mb-2">
+              Minhas Habilidades
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-12">
+              Criação e Modelagem
+            </h2>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              {/* Card 1 */}
+              <div className="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-blue-500/20 transition-shadow">
+                <div className="w-12 h-12 flex items-center justify-center text-white mb-4">
+                  <img
+                    src="/svg/Figma.svg"
+                    alt="Habilidades"
+                    className="w-auto h-auto"
+                  />
+                </div>
+                <h3 className="text-xl font-bold mb-2">
+                  Criação e Validação Visual
+                </h3>
+                <p className="text-blue-100 text-justify">
+                  Transforme ideias em projetos funcionais e esteticamente
+                  impactantes. Com ferramentas modernas e princípios de UX/UI,
+                  desenvolvemos protótipos interativos que permitem testar e
+                  refinar cada detalhe antes da implementação técnica.
+                </p>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-blue-500/20 transition-shadow">
+                <div className="w-12 h-12 flex items-center justify-center text-white mb-4">
+                  <img src="./img/responsive.png" alt="" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">
+                  Experiência Adaptável
+                </h3>
+                <p className="text-blue-100 text-justify">
+                  Crio layouts inteligentes que fluem naturalmente entre telas,
+                  garantindo usabilidade e elegância em todos os dispositivos –
+                  do desktop ao mobile – com grids flexíveis, media queries
+                  precisas e componentes que se reinventam em cada contexto.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
