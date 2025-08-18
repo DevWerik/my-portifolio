@@ -16,6 +16,7 @@ const MenuIcon = () => (
     />
   </svg>
 );
+
 const CloseIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -58,8 +59,21 @@ const Portfolio: React.FC = () => {
     contact: "Contato",
   };
 
+  const skillsIcons = [
+    "/svg/HTML5.svg",
+    "/svg/CSS3.svg",
+    "/svg/JavaScript.svg",
+    "/svg/React.svg",
+    "/svg/TypeScript.svg",
+    "/svg/Node.js.svg",
+    "/svg/Tailwind CSS.svg",
+    "/svg/Figma.svg",
+    "/svg/PostgresSQL.svg",
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-x-hidden">
+      {/* NAVBAR */}
       <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-lg border-b border-blue-800/30 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
@@ -115,7 +129,9 @@ const Portfolio: React.FC = () => {
           ))}
         </div>
       </nav>
+
       <main>
+        {/* HOME */}
         <section
           id="home"
           className="min-h-screen flex items-center justify-center relative overflow-hidden"
@@ -164,6 +180,7 @@ const Portfolio: React.FC = () => {
           </div>
         </section>
 
+        {/* ABOUT */}
         <section id="about" className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center gap-12">
@@ -171,18 +188,18 @@ const Portfolio: React.FC = () => {
                 <div className="w-80 h-80 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-full p-1 shadow-lg shadow-blue-500/20">
                   <div className="w-full h-full bg-slate-900 rounded-full overflow-hidden">
                     <img
-                      src="/werik.jpeg"
+                      src="/img/werik.jpeg"
                       alt="Foto de Werik"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <h2 className="text-4xl font-bold text-center mb-12 text-white">
+                  <h2 className="text-4xl py-6 font-bold text-center mb-12 text-white">
                     Sobre Mim
                   </h2>
                 </div>
               </div>
-              <div className="space-y-6 text-center max-w-3xl ">
-                <p className="text-lg text-blue-100 leading-relaxed text-justify">
+              <div className="space-y-1 text-center max-w-3xl ">
+                <p className="text-lg py-6 text-blue-100 leading-relaxed text-justify">
                   Olá! Eu sou Werik Anjos, tenho 22 anos, sou desenvolvedor
                   FullStack focado em desenvolver soluções tecnológicas de alta
                   qualidade. Tenho como objetivo criar soluções inovadoras e
@@ -215,6 +232,24 @@ const Portfolio: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* SKILLS */}
+        <div className="py-6 bg-blue-950/50 mt-6 mb-20">
+          <div className="max-w-6xl mx-auto ">
+            <div className="overflow-hidden relative">
+              <div className="flex animate-scroll gap-8">
+                {[...skillsIcons, ...skillsIcons].map((icon, index) => (
+                  <img
+                    key={index}
+                    src={icon}
+                    alt="tech logo"
+                    className="min-w-10 max-w-10 object-contain hover:scale-110 transition-transform duration-300"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
