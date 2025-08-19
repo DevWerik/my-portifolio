@@ -73,7 +73,6 @@ const Portfolio: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white overflow-x-hidden">
-      {/* NAVBAR */}
       <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-lg border-b border-blue-800/30 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
@@ -86,9 +85,15 @@ const Portfolio: React.FC = () => {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
-                  className={`capitalize transition-colors duration-300 hover:text-blue-400 ${
-                    activeSection === item ? "text-blue-400" : "text-white"
-                  }`}
+                  className={`relative capitalize transition-colors duration-300 
+              after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 
+              after:bg-blue-400 after:transition-all after:duration-300 
+              hover:after:w-full 
+              ${
+                activeSection === item
+                  ? "text-blue-400 after:w-full"
+                  : "text-white"
+              }`}
                 >
                   {navLabels[item]}
                 </button>
@@ -105,10 +110,8 @@ const Portfolio: React.FC = () => {
 
         <div
           className={`md:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-lg flex flex-col items-start 
-                   transition-all duration-300 ease-in-out overflow-hidden
-                   ${
-                     isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                   }`}
+        transition-all duration-300 ease-in-out overflow-hidden
+        ${isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
         >
           {navItems.map((item, index) => (
             <button
@@ -116,12 +119,11 @@ const Portfolio: React.FC = () => {
               onClick={() => scrollToSection(item)}
               className={`capitalize w-full text-left p-4 transition-all duration-300 ease-in-out hover:bg-blue-900/50 ${
                 activeSection === item ? "text-blue-400" : "text-white"
-              } 
-                      ${
-                        isMenuOpen
-                          ? "translate-x-0 opacity-100"
-                          : "-translate-x-4 opacity-0"
-                      }`}
+              } ${
+                isMenuOpen
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-4 opacity-0"
+              }`}
               style={{ transitionDelay: `${isMenuOpen ? index * 75 : 0}ms` }}
             >
               {navLabels[item]}
@@ -180,7 +182,6 @@ const Portfolio: React.FC = () => {
           </div>
         </section>
 
-        {/* ABOUT */}
         <section id="about" className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center gap-12">
@@ -211,7 +212,9 @@ const Portfolio: React.FC = () => {
                   funcionam na web, e hoje trabalho com as mais modernas
                   tecnologias para transformar ideias em realidade digital.
                 </p>
-                <div className="flex flex-wrap gap-3 mt-4 justify-center">
+
+                {/* REVIEW */}
+                {/* <div className="flex flex-wrap gap-3 mt-4 justify-center">
                   <span className="px-4 py-2 bg-blue-800/50 rounded-full text-sm">
                     9 meses de experiência
                   </span>
@@ -227,13 +230,12 @@ const Portfolio: React.FC = () => {
                   >
                     Algumas de minhas habilidades
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </section>
 
-        {/* SKILLS */}
         <div className="py-6 bg-blue-950/50 mt-6 mb-20">
           <div className="max-w-6xl mx-auto ">
             <div className="overflow-hidden relative">
@@ -259,8 +261,7 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
 
-        {/* SERVICES */}
-        <section id="services" className="py-20 px-4 bg-slate-900">
+        <section id="#" className="py-20 px-4 bg-slate-900">
           <div className="max-w-6xl mx-auto text-center">
             <p className="text-blue-300 uppercase tracking-wider text-sm mb-2">
               Minhas Habilidades
@@ -270,7 +271,6 @@ const Portfolio: React.FC = () => {
             </h2>
 
             <div className="grid gap-8 md:grid-cols-2">
-              {/* Card 1 */}
               <div className="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-blue-500/20 transition-shadow">
                 <div className="w-12 h-12 flex items-center justify-center text-white mb-4">
                   <img
@@ -290,7 +290,6 @@ const Portfolio: React.FC = () => {
                 </p>
               </div>
 
-              {/* Card 2 */}
               <div className="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-blue-500/20 transition-shadow">
                 <div className="w-12 h-12 flex items-center justify-center text-white mb-4">
                   <img src="./img/responsive.png" alt="" />
@@ -305,9 +304,55 @@ const Portfolio: React.FC = () => {
                   precisas e componentes que se reinventam em cada contexto.
                 </p>
               </div>
+
+              <div className="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-blue-500/20 transition-shadow">
+                <div className="w-12 h-12 flex items-center justify-center text-white mb-4">
+                  <img src="./img/api.png" alt="" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">APIs RESTFul</h3>
+                <p className="text-blue-100 text-justify">
+                  Tenho experiência na criação e integração de APIs RESTful,
+                  desenvolvendo soluções que permitem a comunicação entre
+                  diferentes sistemas de forma padronizada, segura e escalável.
+                  <p className="text-blue-100 text-justify mt-4">
+                    Além disso, realizo integrações que conectam aplicações web
+                    e serviços externos, ampliando as funcionalidades do projeto
+                    e garantindo maior eficiência na troca de dados.
+                  </p>
+                </p>
+              </div>
+
+              <div className="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-blue-500/20 transition-shadow">
+                <div className="w-12 h-12 flex items-center justify-center text-white mb-4">
+                  <img src="./img/IA.png" alt="" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Uso de Prompts de IA</h3>
+                <p className="text-blue-100 text-justify">
+                  Utilizo essa prática no processo de desenvolvimento para
+                  aumentar minha produtividade e otimizar a resolução de
+                  problemas. Ao criar comandos claros e objetivos, consigo obter
+                  soluções rápidas, gerar ideias criativas e até automatizar
+                  tarefas repetitivas.
+                </p>
+              </div>
             </div>
           </div>
         </section>
+
+        <section id="#" className="py-20 px-4  bg-slate-800 ">
+          <div className="max-w-6xl mx-auto text-center ">
+            <div className="max-w-6xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                Minha Trajetória
+              </h2>
+              <p className="text-gray-300 mb-12">
+                Experiências profissionais e projetos que marcaram minha
+                carreira.
+              </p>
+            </div>
+          </div>
+        </section>
+        
       </main>
     </div>
   );
