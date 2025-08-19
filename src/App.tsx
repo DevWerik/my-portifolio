@@ -179,6 +179,15 @@ const Portfolio: React.FC = () => {
                 Entre em contato
               </button>
             </div>
+            <div className="flex justify-center mt-10">
+              <button  onClick={() => scrollToSection("about")}>
+                <img
+                  src="/svg/seta.svg"
+                  alt="Seta para baixo"
+                  className="w-10 h-10 animate-bounce cursor-pointer"
+                />
+              </button>
+            </div>
           </div>
         </section>
 
@@ -417,7 +426,9 @@ const Portfolio: React.FC = () => {
                     <span className="text-sm font-semibold text-cyan-400">
                       2025 - Atual
                     </span>
-                    <h3 className="text-xl font-bold mt-1 mb-2">API RESTful</h3>
+                    <h3 className="text-xl font-bold mt-1 mb-2">
+                      API RESTful | Chatbot
+                    </h3>
                     <p className="text-gray-300 text-justify">
                       Esta API funciona como um backend para um chatbot que
                       responde as perguntas de usuários com base em um texto
@@ -437,7 +448,68 @@ const Portfolio: React.FC = () => {
           </div>
         </section>
 
-     
+        <section id="contact" className="py-20 px-4 bg-slate-900">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-gray-600 text-lg">Quer falar comigo?</h2>
+            <h3 className="text-3xl md:text-4xl font-bold mb-8">
+              ENTRE EM CONTATO
+            </h3>
+
+            <form className="space-y-6 text-left">
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">
+                  Nome completo
+                </label>
+                <input
+                  type="text"
+                  placeholder="Digite seu nome completo"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">
+                  E-mail
+                </label>
+                <input
+                  type="email"
+                  placeholder="Digite seu endereço de e-mail"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">
+                  Assunto
+                </label>
+                <input
+                  type="text"
+                  placeholder="Por que está entrando em contato?"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 font-medium mb-2">
+                  Mensagem
+                </label>
+                <textarea
+                  rows={5}
+                  placeholder="Digite sua mensagem"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 rounded-lg transition"
+              >
+                Enviar
+                <img src="/img/enviar.png" alt="" className="w-6 h-6" />
+              </button>
+            </form>
+          </div>
+        </section>
       </main>
     </div>
   );
