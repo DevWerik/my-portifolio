@@ -50,12 +50,12 @@ const Portfolio: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const navItems = ["home", "about", "skills", "projects", "contact"];
+  const navItems = ["home", "about", "skills", "experience", "contact"];
   const navLabels: { [key: string]: string } = {
     home: "Início",
     about: "Sobre",
     skills: "Habilidades",
-    projects: "Projetos",
+    experience: "Experiencias",
     contact: "Contato",
   };
 
@@ -261,7 +261,7 @@ const Portfolio: React.FC = () => {
           </div>
         </div>
 
-        <section id="#" className="py-20 px-4 bg-slate-900">
+        <section id="skills" className="py-20 px-4 bg-slate-900">
           <div className="max-w-6xl mx-auto text-center">
             <p className="text-blue-300 uppercase tracking-wider text-sm mb-2">
               Minhas Habilidades
@@ -339,20 +339,105 @@ const Portfolio: React.FC = () => {
           </div>
         </section>
 
-        <section id="#" className="py-20 px-4  bg-slate-800 ">
-          <div className="max-w-6xl mx-auto text-center ">
-            <div className="max-w-6xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                Minha Trajetória
-              </h2>
-              <p className="text-gray-300 mb-12">
-                Experiências profissionais e projetos que marcaram minha
-                carreira.
-              </p>
+        <section id="experience" className="py-20 px-4 bg-slate-800 text-white">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Minha Trajetória
+            </h2>
+            <p className="text-gray-300 mb-12 max-w-3xl mx-auto">
+              Experiências profissionais e projetos que marcaram minha carreira
+              e contribuíram para meu desenvolvimento.
+            </p>
+          </div>
+
+          <div className="relative max-w-2xl mx-auto">
+            <div className="absolute w-1 bg-cyan-500 h-full left-1/2 transform -translate-x-1/2"></div>
+
+            <div className="relative mb-12">
+              <div className="md:flex items-center">
+                <div className="md:w-1/2 md:pr-8">
+                  <div className="bg-slate-700 p-2 rounded-lg shadow-lg hover:shadow-cyan-500/50 transition-shadow duration-300">
+                    <img
+                      src="/img/logo.png"
+                      alt="Logo da Instituição"
+                      className="rounded-md w-full"
+                    />
+                  </div>
+                </div>
+
+                <div className="md:w-1/2 md:pl-8 mt-6 md:mt-0">
+                  <div className="absolute w-4 h-4 bg-cyan-500 rounded-full left-1/2 transform -translate-x-1/2 mt-3 hidden md:block"></div>
+                  <div className="bg-slate-700 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                    <span className="text-sm font-semibold text-cyan-400">
+                      2025 - Presente
+                    </span>
+                    <h3 className="text-xl font-bold mt-1 mb-2">
+                      Desenvolvedor Fullstack | Sim Instituto Social
+                    </h3>
+                    <p className="text-gray-300 text-justify">
+                      No meu trabalho no SIM Instituto Social, desempenhei uma
+                      função crucial na evolução da plataforma online de
+                      projetos sociais. Fui responsável por modernizar o
+                      front-end com <strong>React.js e TypeScript</strong>,
+                      aplicando <strong>Tailwind CSS</strong> para garantir uma
+                      interface responsiva e de alta qualidade. Conduzi
+                      aprimoramentos contínuos na experiência do usuário e
+                      mantive um diálogo próximo com o cliente para alinhar o
+                      desenvolvimento às suas necessidades e assegurar entregas
+                      de valor.
+                    </p>
+                    <p className="text-gray-300 text-justify">
+                      O destaque da minha contribuição foi a arquitetura e
+                      implementação de um chatbot inteligente. Utilizando{" "}
+                      <strong>Node.js</strong> no back-end, realizei a
+                      integração completa com a{" "}
+                      <strong>API da OpenAI (ChatGPT)</strong>, criando uma
+                      solução escalável que melhorou significativamente a
+                      acessibilidade e o engajamento na plataforma.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative mb-12">
+              <div className="md:flex items-center flex-row-reverse">
+                <div className="md:w-1/2 md:pl-8">
+                  <div className="bg-slate-700 p-2 rounded-lg shadow-lg hover:shadow-cyan-500/50 transition-shadow duration-300">
+                    <img
+                      src="/img/api (1).png"
+                      alt="Logo da Instituição"
+                      className="rounded-md w-full"
+                    />
+                  </div>
+                </div>
+
+                <div className="md:w-1/2 md:pr-8 mt-6 md:mt-0">
+                  <div className="absolute w-4 h-4 bg-cyan-500 rounded-full left-1/2 transform -translate-x-1/2 mt-3 hidden md:block"></div>
+                  <div className="bg-slate-700 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                    <span className="text-sm font-semibold text-cyan-400">
+                      2025 - Atual
+                    </span>
+                    <h3 className="text-xl font-bold mt-1 mb-2">API RESTful</h3>
+                    <p className="text-gray-300 text-justify">
+                      Esta API funciona como um backend para um chatbot que
+                      responde as perguntas de usuários com base em um texto
+                      institucional pré-definido.
+                      <p>
+                        {" "}
+                        Toda a comunicação com a inteligência artificial da
+                        OpenAI é gerenciada pelo servidor, que expõe um endpoint
+                        específico para receber as perguntas e retornar as
+                        respostas.
+                      </p>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-        
+
+     
       </main>
     </div>
   );
