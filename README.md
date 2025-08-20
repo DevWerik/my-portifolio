@@ -1,69 +1,27 @@
-# React + TypeScript + Vite
+Portfólio Pessoal - Werik Anjos ✨ 🚀 Demonstração Ao Vivo Você pode acessar a versão ao vivo do projeto aqui: https://wasportifolio.vercel.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📖 Sobre o Projeto Este é o repositório do meu portfólio pessoal, um Single Page Application (SPA) moderno e totalmente responsivo, criado para apresentar minha jornada como desenvolvedor Full Stack. O objetivo foi construir uma plataforma que não apenas listasse minhas competências, mas que também demonstrasse minhas habilidades em desenvolvimento front-end na prática, com um design limpo, animações suaves e funcionalidades interativas.
 
-Currently, two official plugins are available:
+🌟 Principais Funcionalidades 🎨 Design Moderno e Responsivo: Construído com uma abordagem mobile-first usando Tailwind CSS, garantindo uma experiência de usuário impecável em desktops, tablets e celulares.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+💨 Navegação Fluida: Experiência de SPA com scroll suave que permite uma navegação suave e intuitiva entre as garrafas.
 
-## Expanding the ESLint configuration
+✨ Animações e Microinterações: Animações sutis na entrada dos elementos, efeitos de hover e um carrossel infinito de tecnologias para criar uma interface mais dinâmica e envolvente.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+📬 Formulário de Contato Funcional: Um formulário completo com validação de dados em tempo real (usando React Hook Form) e integrado ao EmailJS para o envio direto de mensagens, sem a necessidade de um back-end.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+📅 Timeline de Experiência: Uma linha do tempo visualmente atraente que detalha minha trajetória profissional e os principais projetos em que trabalhei.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+🛠️ Tecnologias Utilizadas Este projeto foi construído com as seguintes tecnologias e ferramentas:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+React: Para a construção de uma interface de usuário reativa e componenteizada.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+TypeScript: Para adicionar tipagem estática, garantindo um código mais robusto e escalável.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Tailwind CSS: Para a estilização ágil e a criação de um design responsivo e customizável.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+React Hook Form: Para o gerenciamento eficiente e performático de formulários e suas validações.
+
+EmailJS: Para habilitar o envio de e-mails diretamente do cliente de forma segura.
+
+Veja: Como ferramenta de build para um desenvolvimento front-end moderno e rápido.

@@ -270,8 +270,8 @@ const Portfolio: React.FC = () => {
                   Olá! Eu sou Werik Anjos, tenho 22 anos, sou desenvolvedor
                   FullStack focado em desenvolver soluções tecnológicas de alta
                   qualidade. Tenho como objetivo criar soluções inovadoras e
-                  eficientes para ajudar as empresas a alcançarem seus objetivos
-                  e aumentar a produtividade de seus colaboradores.
+                  eficientes para ajudar empresas a alcançarem seus objetivos e
+                  aumentar a produtividade de seus colaboradores.
                 </p>
                 <p className="text-lg text-blue-100 leading-relaxed text-justify">
                   Minha jornada começou com curiosidade sobre como as coisas
@@ -419,25 +419,13 @@ const Portfolio: React.FC = () => {
                       Desenvolvedor Fullstack | Sim Instituto Social
                     </h3>
                     <p className="text-gray-300 text-justify">
-                      No meu trabalho no SIM Instituto Social, desempenhei uma
-                      função crucial na evolução da plataforma online de
-                      projetos sociais. Fui responsável por modernizar o
-                      front-end com <strong>React.js e TypeScript</strong>,
-                      aplicando <strong>Tailwind CSS</strong> para garantir uma
-                      interface responsiva e de alta qualidade. Conduzi
-                      aprimoramentos contínuos na experiência do usuário e
-                      mantive um diálogo próximo com o cliente para alinhar o
-                      desenvolvimento às suas necessidades e assegurar entregas
-                      de valor.
-                    </p>
-                    <p className="text-gray-300 text-justify">
-                      O destaque da minha contribuição foi a arquitetura e
-                      implementação de um chatbot inteligente. Utilizando{" "}
-                      <strong>Node.js</strong> no back-end, realizei a
-                      integração completa com a{" "}
-                      <strong>API da OpenAI (ChatGPT)</strong>, criando uma
-                      solução escalável que melhorou significativamente a
-                      acessibilidade e o engajamento na plataforma.
+                      Contribuí para a evolução da plataforma do SIM Instituto
+                      Social, modernizando o front-end com React.js, TypeScript
+                      e Tailwind CSS, garantindo responsividade e alta qualidade
+                      na interface. No back-end, implementei um chatbot
+                      inteligente com Node.js integrado à API da OpenAI
+                      (ChatGPT), criando uma solução escalável que aumentou a
+                      acessibilidade e o engajamento dos usuários.
                     </p>
                   </div>
                 </div>
@@ -469,12 +457,44 @@ const Portfolio: React.FC = () => {
                       responde as perguntas de usuários com base em um texto
                       institucional pré-definido.
                     </p>
-                    <p>
+                    <p className="text-gray-300 text-justify">
                       {" "}
                       Toda a comunicação com a inteligência artificial da OpenAI
                       é gerenciada pelo servidor, que expõe um endpoint
                       específico para receber as perguntas e retornar as
                       respostas.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative mb-12">
+              <div className="md:flex items-center">
+                <div className="md:w-1/2 md:pr-8">
+                  <div className="bg-slate-700 p-2 rounded-lg shadow-lg hover:shadow-cyan-500/50 transition-shadow duration-300">
+                    <img
+                      src="/img/portifolio.png"
+                      alt="Logo da Instituição"
+                      className="rounded-md w-full"
+                    />
+                  </div>
+                </div>
+
+                <div className="md:w-1/2 md:pl-8 mt-6 md:mt-0">
+                  <div className="absolute w-4 h-4 bg-cyan-500 rounded-full left-1/2 transform -translate-x-1/2 mt-3 hidden md:block"></div>
+                  <div className="bg-slate-700 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                    <h3 className="text-xl font-bold mt-1 mb-2">
+                      Frontend | Este portifólio
+                    </h3>
+                    <p className="text-gray-300 text-justify">
+                      Este portfólio foi cuidadosamente desenvolvido com React e
+                      TypeScript para construir toda base escalável baseada na
+                      experiência do usuário. A estilização ágil e o design
+                      responsivo foram implementados com Tailwind CSS, enquanto
+                      o formulário de contato ganha performance e validações
+                      precisas com React Hook Form. A funcionalidade de envio de
+                      mensagens é integrada diretamente pelo EmailJS, criando
+                      uma experiência completa e funcional.
                     </p>
                   </div>
                 </div>
