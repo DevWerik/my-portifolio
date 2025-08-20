@@ -180,7 +180,7 @@ const Portfolio: React.FC = () => {
               </button>
             </div>
             <div className="flex justify-center mt-10">
-              <button  onClick={() => scrollToSection("about")}>
+              <button onClick={() => scrollToSection("about")}>
                 <img
                   src="/svg/seta.svg"
                   alt="Seta para baixo"
@@ -301,7 +301,7 @@ const Portfolio: React.FC = () => {
 
               <div className="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-blue-500/20 transition-shadow">
                 <div className="w-12 h-12 flex items-center justify-center text-white mb-4">
-                  <img src="./img/responsive.png" alt="" />
+                  <img src="./img/responsive.png" alt="loogo-responsivo" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">
                   Experiência Adaptável
@@ -316,7 +316,7 @@ const Portfolio: React.FC = () => {
 
               <div className="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-blue-500/20 transition-shadow">
                 <div className="w-12 h-12 flex items-center justify-center text-white mb-4">
-                  <img src="./img/api.png" alt="" />
+                  <img src="./img/api.png" alt="logo-api" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">APIs RESTFul</h3>
                 <p className="text-blue-100 text-justify">
@@ -333,7 +333,7 @@ const Portfolio: React.FC = () => {
 
               <div className="bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-blue-500/20 transition-shadow">
                 <div className="w-12 h-12 flex items-center justify-center text-white mb-4">
-                  <img src="./img/IA.png" alt="" />
+                  <img src="./img/IA.png" alt="IA" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Uso de Prompts de IA</h3>
                 <p className="text-blue-100 text-justify">
@@ -447,8 +447,74 @@ const Portfolio: React.FC = () => {
             </div>
           </div>
         </section>
+        <section
+          id="certificados"
+          className="py-20 px-4 bg-slate-900 text-white"
+        >
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-10">
+              Certificações
+            </h2>
 
-        <section id="contact" className="py-20 px-4 bg-slate-900">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="p-6 bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
+                <img
+                  src="/img/certificado.png"
+                  alt="Certificado Rocketseat"
+                  className="rounded-xl mb-4 shadow-md"
+                />
+                <h3 className="text-xl font-semibold mb-2">
+                  Formação Fullstack
+                </h3>
+                <a
+                  href="https://app.rocketseat.com.br/certificates/81f16ba3-0210-4487-9691-3e3ebc2b08ee"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 font-medium hover:underline"
+                >
+                  Ver certificado
+                </a>
+              </div>
+
+              <div className="p-6 bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
+                <img
+                  src="/img/certificado-react.png"
+                  alt="Certificado React"
+                  className="rounded-xl mb-4 shadow-md"
+                />
+                <h3 className="text-xl font-semibold mb-2">React Avançado</h3>
+                <a
+                  href="https://app.rocketseat.com.br/certificates/64cce446-40ce-4e62-a203-363dc0fa03b4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 font-medium hover:underline"
+                >
+                  Ver certificado
+                </a>
+              </div>
+
+               <div className="p-6 bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
+                <img
+                  src="/img/ui-ux.png"
+                  alt="Certificado React"
+                  className="rounded-xl mb-4 shadow-md"
+                />
+                <h3 className="text-xl font-semibold mb-2">Figma</h3>
+                <a
+                  href="https://app.rocketseat.com.br/certificates/aa07f9ff-ed68-4872-a889-933147bf88e1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 font-medium hover:underline"
+                >
+                  Ver certificado
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="py-20 px-4 bg-slate-700 ">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-gray-600 text-lg">Quer falar comigo?</h2>
             <h3 className="text-3xl md:text-4xl font-bold mb-8">
