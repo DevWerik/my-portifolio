@@ -134,6 +134,7 @@ const Portfolio: React.FC = () => {
       <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-lg border-b border-blue-800/30 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
+            {/* Revisar */}
             <div className="text-2xl font-bold bg-gradient-to-r text-white bg-clip-text">
               Dev.Werik
             </div>
@@ -247,7 +248,6 @@ const Portfolio: React.FC = () => {
             </div>
           </div>
         </section>
-
         <section id="about" className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center gap-12">
@@ -282,7 +282,6 @@ const Portfolio: React.FC = () => {
             </div>
           </div>
         </section>
-
         <div className="py-6 bg-blue-950/50 mt-6 mb-20">
           <div className="max-w-6xl mx-auto ">
             <div className="overflow-hidden relative">
@@ -307,7 +306,6 @@ const Portfolio: React.FC = () => {
             </div>
           </div>
         </div>
-
         <section id="skills" className="py-20 px-4 bg-slate-900">
           <div className="max-w-6xl mx-auto text-center">
             <p className="text-blue-300 uppercase tracking-wider text-sm mb-2">
@@ -385,7 +383,6 @@ const Portfolio: React.FC = () => {
             </div>
           </div>
         </section>
-
         <section id="experience" className="py-20 px-4 bg-slate-800 text-white">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -485,6 +482,7 @@ const Portfolio: React.FC = () => {
             </div>
           </div>
         </section>
+
         <section
           id="certifications"
           className="py-20 px-4 bg-slate-900 text-white"
@@ -493,10 +491,63 @@ const Portfolio: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-10">
               Certificações
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="p-6 bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
+                <img
+                  src="/img/certificado.png"
+                  alt="Certificado Rocketseat"
+                  className="rounded-xl mb-4 shadow-md"
+                />
+                <h3 className="text-xl font-semibold mb-2">
+                  Formação Fullstack
+                </h3>
+                <a
+                  href="https://app.rocketseat.com.br/certificates/81f16ba3-0210-4487-9691-3e3ebc2b08ee"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 font-medium hover:underline"
+                >
+                  Ver certificado
+                </a>
+              </div>
+
+              <div className="p-6 bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
+                <img
+                  src="/img/certificado-react.png"
+                  alt="Certificado React"
+                  className="rounded-xl mb-4 shadow-md"
+                />
+                <h3 className="text-xl font-semibold mb-2">React Avançado</h3>
+                <a
+                  href="https://app.rocketseat.com.br/certificates/64cce446-40ce-4e62-a203-363dc0fa03b4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 font-medium hover:underline"
+                >
+                  Ver certificado
+                </a>
+              </div>
+
+              <div className="p-6 bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
+                <img
+                  src="/img/ui-ux.png"
+                  alt="Certificado React"
+                  className="rounded-xl mb-4 shadow-md"
+                />
+                <h3 className="text-xl font-semibold mb-2">Figma</h3>
+                <a
+                  href="https://app.rocketseat.com.br/certificates/aa07f9ff-ed68-4872-a889-933147bf88e1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 font-medium hover:underline"
+                >
+                  Ver certificado
+                </a>
+              </div>
+            </div>
           </div>
         </section>
-
         <section id="contact" className="py-20 px-4 bg-slate-700 ">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-lg">Quer falar comigo?</h2>
