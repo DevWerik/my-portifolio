@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 
 const MenuIcon = () => (
   <svg
@@ -46,16 +47,46 @@ const Portfolio: React.FC = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isVisible, setIsVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormInputs>();
 
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    console.log("Dados do formulário:", data);
-    alert("Mensagem enviada com sucesso!");
+    setIsSubmitting(true);
+
+    const templateParams = {
+      from_name: data.fullName,
+      subject: data.subject,
+      message: data.message,
+      email: data.email,
+    };
+
+    emailjs
+      .send(
+        "service_rrh9917",
+        "template_puys5zq",
+        templateParams,
+        "2oy5kJF_mA-EoJFyl"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Mensagem enviada com sucesso!");
+          reset();
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          alert("Ocorreu um erro ao enviar a mensagem. Tente novamente.");
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   useEffect(() => {
@@ -69,7 +100,14 @@ const Portfolio: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const navItems = ["home", "about", "skills", "experience", "certifications", "contact"];
+  const navItems = [
+    "home",
+    "about",
+    "skills",
+    "experience",
+    "certifications",
+    "contact",
+  ];
   const navLabels: { [key: string]: string } = {
     home: "Início",
     about: "Sobre",
@@ -448,70 +486,14 @@ const Portfolio: React.FC = () => {
           </div>
         </section>
         <section
-          id="certificados"
+          id="certifications"
           className="py-20 px-4 bg-slate-900 text-white"
         >
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-10">
               Certificações
             </h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="p-6 bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
-                <img
-                  src="/img/certificado.png"
-                  alt="Certificado Rocketseat"
-                  className="rounded-xl mb-4 shadow-md"
-                />
-                <h3 className="text-xl font-semibold mb-2">
-                  Formação Fullstack
-                </h3>
-                <a
-                  href="https://app.rocketseat.com.br/certificates/81f16ba3-0210-4487-9691-3e3ebc2b08ee"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 font-medium hover:underline"
-                >
-                  Ver certificado
-                </a>
-              </div>
-
-              <div className="p-6 bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
-                <img
-                  src="/img/certificado-react.png"
-                  alt="Certificado React"
-                  className="rounded-xl mb-4 shadow-md"
-                />
-                <h3 className="text-xl font-semibold mb-2">React Avançado</h3>
-                <a
-                  href="https://app.rocketseat.com.br/certificates/64cce446-40ce-4e62-a203-363dc0fa03b4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 font-medium hover:underline"
-                >
-                  Ver certificado
-                </a>
-              </div>
-
-              <div className="p-6 bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
-                <img
-                  src="/img/ui-ux.png"
-                  alt="Certificado React"
-                  className="rounded-xl mb-4 shadow-md"
-                />
-                <h3 id="certifications" className="text-xl font-semibold mb-2">
-                  Figma
-                </h3>
-                <a
-                  href="https://app.rocketseat.com.br/certificates/aa07f9ff-ed68-4872-a889-933147bf88e1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 font-medium hover:underline"
-                >
-                  Ver certificado
-                </a>
-              </div>
-            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
           </div>
         </section>
 
@@ -587,7 +569,6 @@ const Portfolio: React.FC = () => {
                   </p>
                 )}
               </div>
-
               <div>
                 <label className="block text-white font-medium mb-2">
                   Mensagem
@@ -609,19 +590,31 @@ const Portfolio: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 rounded-lg transition"
+                disabled={isSubmitting}
+                className="w-full flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 rounded-lg transition disabled:bg-slate-500 disabled:cursor-not-allowed"
               >
-                Enviar
-                <img
-                  src="/img/enviar.png"
-                  alt="submit-button"
-                  className="w-6 h-6"
-                />
+                {isSubmitting ? "Enviando..." : "Enviar"}
+                {!isSubmitting && (
+                  <img
+                    src="/img/enviar.png"
+                    alt="submit-button"
+                    className="w-6 h-6"
+                  />
+                )}
               </button>
             </form>
           </div>
         </section>
       </main>
+
+      <footer className="bg-slate-900 border-t border-blue-800/30 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+          <p>
+            &copy; {new Date().getFullYear()} Dev.Werik. Todos os direitos
+            reservados.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
