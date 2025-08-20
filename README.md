@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 Portfólio Pessoal - Werik Anjos ✨ 🚀 Demonstração Ao Vivo Você pode acessar a versão ao vivo do projeto aqui: https://wasportifolio.vercel.app/
 
 📖 Sobre o Projeto Este é o repositório do meu portfólio pessoal, um Single Page Application (SPA) moderno e totalmente responsivo, criado para apresentar minha jornada como desenvolvedor Full Stack. O objetivo foi construir uma plataforma que não apenas listasse minhas competências, mas que também demonstrasse minhas habilidades em desenvolvimento front-end na prática, com um design limpo, animações suaves e funcionalidades interativas.
@@ -25,6 +23,3 @@ Tailwind CSS: Para a estilização ágil e a criação de um design responsivo e
 React Hook Form: Para o gerenciamento eficiente e performático de formulários e suas validações.
 
 EmailJS: Para habilitar o envio de e-mails diretamente do cliente de forma segura.
-
-Veja: Como ferramenta de build para um desenvolvimento front-end moderno e rápido.
->>>>>>> 22b2e37fd396f89faf0d5f71b894ce87659ae898
