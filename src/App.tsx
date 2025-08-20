@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useForm, type SubmitHandler } from "react-hook-form";
 
 const MenuIcon = () => (
   <svg
@@ -34,10 +35,28 @@ const CloseIcon = () => (
   </svg>
 );
 
+type FormInputs = {
+  fullName: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
 const Portfolio: React.FC = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isVisible, setIsVisible] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormInputs>();
+
+  const onSubmit: SubmitHandler<FormInputs> = (data) => {
+    console.log("Dados do formulário:", data);
+    alert("Mensagem enviada com sucesso!");
+  };
 
   useEffect(() => {
     setIsVisible(true);
@@ -50,12 +69,13 @@ const Portfolio: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const navItems = ["home", "about", "skills", "experience", "contact"];
+  const navItems = ["home", "about", "skills", "experience", "certifications", "contact"];
   const navLabels: { [key: string]: string } = {
     home: "Início",
     about: "Sobre",
     skills: "Habilidades",
     experience: "Experiencias",
+    certifications: "Certificações",
     contact: "Contato",
   };
 
@@ -86,14 +106,14 @@ const Portfolio: React.FC = () => {
                   key={item}
                   onClick={() => scrollToSection(item)}
                   className={`relative capitalize transition-colors duration-300 
-              after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 
-              after:bg-blue-400 after:transition-all after:duration-300 
-              hover:after:w-full 
-              ${
-                activeSection === item
-                  ? "text-blue-400 after:w-full"
-                  : "text-white"
-              }`}
+                  after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 
+                  after:bg-blue-400 after:transition-all after:duration-300 
+                  hover:after:w-full 
+                  ${
+                    activeSection === item
+                      ? "text-blue-400 after:w-full"
+                      : "text-white"
+                  }`}
                 >
                   {navLabels[item]}
                 </button>
@@ -133,7 +153,6 @@ const Portfolio: React.FC = () => {
       </nav>
 
       <main>
-        {/* HOME */}
         <section
           id="home"
           className="min-h-screen flex items-center justify-center relative overflow-hidden"
@@ -167,7 +186,7 @@ const Portfolio: React.FC = () => {
             </h1>
             <div className="flex flex-col md:flex-row justify-center items-center gap-6">
               <button
-                onClick={() => scrollToSection("projects")}
+                onClick={() => scrollToSection("experience")}
                 className="inline-flex items-center px-8 py-3 cursor-pointer bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
               >
                 Veja meus projetos
@@ -221,25 +240,6 @@ const Portfolio: React.FC = () => {
                   funcionam na web, e hoje trabalho com as mais modernas
                   tecnologias para transformar ideias em realidade digital.
                 </p>
-
-                {/* REVIEW */}
-                {/* <div className="flex flex-wrap gap-3 mt-4 justify-center">
-                  <span className="px-4 py-2 bg-blue-800/50 rounded-full text-sm">
-                    9 meses de experiência
-                  </span>
-                  <button
-                    onClick={() => scrollToSection("projects")}
-                    className="px-4 py-2 bg-cyan-800/50 rounded-full text-sm transition-transform hover:scale-105"
-                  >
-                    Conheça alguns de meus projetos
-                  </button>
-                  <button
-                    onClick={() => scrollToSection("skills")}
-                    className="px-4 py-2 bg-blue-700/50 rounded-full text-sm transition-transform hover:scale-105"
-                  >
-                    Algumas de minhas habilidades
-                  </button>
-                </div> */}
               </div>
             </div>
           </div>
@@ -323,11 +323,11 @@ const Portfolio: React.FC = () => {
                   Tenho experiência na criação e integração de APIs RESTful,
                   desenvolvendo soluções que permitem a comunicação entre
                   diferentes sistemas de forma padronizada, segura e escalável.
-                  <p className="text-blue-100 text-justify mt-4">
-                    Além disso, realizo integrações que conectam aplicações web
-                    e serviços externos, ampliando as funcionalidades do projeto
-                    e garantindo maior eficiência na troca de dados.
-                  </p>
+                </p>
+                <p className="text-blue-100 text-justify mt-4">
+                  Além disso, realizo integrações que conectam aplicações web e
+                  serviços externos, ampliando as funcionalidades do projeto e
+                  garantindo maior eficiência na troca de dados.
                 </p>
               </div>
 
@@ -433,13 +433,13 @@ const Portfolio: React.FC = () => {
                       Esta API funciona como um backend para um chatbot que
                       responde as perguntas de usuários com base em um texto
                       institucional pré-definido.
-                      <p>
-                        {" "}
-                        Toda a comunicação com a inteligência artificial da
-                        OpenAI é gerenciada pelo servidor, que expõe um endpoint
-                        específico para receber as perguntas e retornar as
-                        respostas.
-                      </p>
+                    </p>
+                    <p>
+                      {" "}
+                      Toda a comunicação com a inteligência artificial da OpenAI
+                      é gerenciada pelo servidor, que expõe um endpoint
+                      específico para receber as perguntas e retornar as
+                      respostas.
                     </p>
                   </div>
                 </div>
@@ -493,13 +493,15 @@ const Portfolio: React.FC = () => {
                 </a>
               </div>
 
-               <div className="p-6 bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
+              <div className="p-6 bg-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center">
                 <img
                   src="/img/ui-ux.png"
                   alt="Certificado React"
                   className="rounded-xl mb-4 shadow-md"
                 />
-                <h3 className="text-xl font-semibold mb-2">Figma</h3>
+                <h3 id="certifications" className="text-xl font-semibold mb-2">
+                  Figma
+                </h3>
                 <a
                   href="https://app.rocketseat.com.br/certificates/aa07f9ff-ed68-4872-a889-933147bf88e1"
                   target="_blank"
@@ -509,61 +511,100 @@ const Portfolio: React.FC = () => {
                   Ver certificado
                 </a>
               </div>
-
             </div>
           </div>
         </section>
 
         <section id="contact" className="py-20 px-4 bg-slate-700 ">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-gray-600 text-lg">Quer falar comigo?</h2>
+            <h2 className="text-lg">Quer falar comigo?</h2>
             <h3 className="text-3xl md:text-4xl font-bold mb-8">
               ENTRE EM CONTATO
             </h3>
 
-            <form className="space-y-6 text-left">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="space-y-6 text-left"
+              noValidate
+            >
               <div>
-                <label className="block text-gray-700 font-medium mb-2">
+                <label className="block text-white font-medium mb-2">
                   Nome completo
                 </label>
                 <input
                   type="text"
                   placeholder="Digite seu nome completo"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  {...register("fullName", {
+                    required: "O nome completo é obrigatório.",
+                  })}
                 />
+                {errors.fullName && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.fullName.message}
+                  </p>
+                )}
               </div>
 
               <div>
-                <label className="block text-gray-700 font-medium mb-2">
+                <label className="block text-white font-medium mb-2">
                   E-mail
                 </label>
                 <input
                   type="email"
                   placeholder="Digite seu endereço de e-mail"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  {...register("email", {
+                    required: "O e-mail é obrigatório.",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Endereço de e-mail inválido.",
+                    },
+                  })}
                 />
+                {errors.email && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
 
               <div>
-                <label className="block text-gray-700 font-medium mb-2">
+                <label className="block text-white font-medium mb-2">
                   Assunto
                 </label>
                 <input
                   type="text"
                   placeholder="Por que está entrando em contato?"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  {...register("subject", {
+                    required: "O assunto é obrigatório.",
+                  })}
                 />
+                {errors.subject && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.subject.message}
+                  </p>
+                )}
               </div>
 
               <div>
-                <label className="block text-gray-700 font-medium mb-2">
+                <label className="block text-white font-medium mb-2">
                   Mensagem
                 </label>
                 <textarea
                   rows={5}
                   placeholder="Digite sua mensagem"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  className="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                  {...register("message", {
+                    required: "A mensagem é obrigatória.",
+                  })}
                 ></textarea>
+                {errors.message && (
+                  <p className="text-red-400 text-sm mt-1">
+                    {errors.message.message}
+                  </p>
+                )}
               </div>
 
               <button
@@ -571,7 +612,11 @@ const Portfolio: React.FC = () => {
                 className="w-full flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-medium py-3 rounded-lg transition"
               >
                 Enviar
-                <img src="/img/enviar.png" alt="" className="w-6 h-6" />
+                <img
+                  src="/img/enviar.png"
+                  alt="submit-button"
+                  className="w-6 h-6"
+                />
               </button>
             </form>
           </div>
