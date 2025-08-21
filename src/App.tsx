@@ -598,7 +598,6 @@ const Portfolio: React.FC = () => {
                   </p>
                 )}
               </div>
-
               <div>
                 <label className="block text-white font-medium mb-2">
                   E-mail
@@ -621,7 +620,6 @@ const Portfolio: React.FC = () => {
                   </p>
                 )}
               </div>
-
               <div>
                 <label className="block text-white font-medium mb-2">
                   Assunto
