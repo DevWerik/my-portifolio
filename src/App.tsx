@@ -474,7 +474,7 @@ const Portfolio: React.FC = () => {
                   <div className="bg-slate-700 p-2 rounded-lg shadow-lg hover:shadow-cyan-500/50 transition-shadow duration-300">
                     <img
                       src="/img/portifolio.png"
-                      alt="Logo da Instituição"
+                      alt="Imagem do Portifolio"
                       className="rounded-md w-full"
                     />
                   </div>
@@ -500,6 +500,45 @@ const Portfolio: React.FC = () => {
                 </div>
               </div>
             </div>
+       <div className="w-full px-4 mb-12">
+  <div className="relative max-w-5xl mx-auto">
+    <div className="md:flex items-center md:gap-x-16">
+      
+      {/* Coluna da imagem */}
+      <div className="md:w-1/2 flex items-center justify-center">
+        <div className="bg-slate-700 h-96 w-full flex items-center justify-center p-2 rounded-lg shadow-lg hover:shadow-cyan-500/50 transition-shadow duration-300">
+          <img
+            src="/img/tech.png"
+            alt="Imagem do Portifolio"
+            className="rounded-md w-full h-full object-contain"
+          />
+        </div>
+      </div>
+
+      {/* Coluna do texto */}
+      <div className="md:w-1/2 mt-6 md:mt-0">
+        <div className="absolute w-4 h-4 bg-cyan-500 rounded-full left-1/2 -translate-x-1/2 mt-3 hidden md:block"></div>
+        <div className="bg-slate-700 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+          <h3 className="text-xl font-bold mt-1 mb-2">Jw Tech</h3>
+          <p className="text-gray-300 text-justify">
+            Para este projeto, desenvolvi uma experiência de
+            autenticação completa e intuitiva. Criei as telas de
+            login e cadastro com foco na usabilidade, implementando
+            uma validação de dados robusta e em tempo real para
+            guiar o usuário e garantir a segurança e a
+            confirmação do registro. A base tecnológica foi construída com React
+            e Tailwind CSS para uma interface moderna e responsiva,
+            enquanto Zod e React Hook Form garantiram formulários
+            seguros, eficientes e de fácil manutenção.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
           </div>
         </section>
 
